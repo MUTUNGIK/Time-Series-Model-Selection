@@ -1,6 +1,5 @@
 # 1. Load required packages
 library(fpp3)
-library(fpp2)
 library(tidyverse)
 library(tidyr)
 library(forecast)
