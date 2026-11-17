@@ -17,7 +17,7 @@ Separate classification trees are provided for seasonal and nonseasonal time ser
 |---|---|
 | `feature_extraction.R` | Functions for extracting time series characteristics |
 | `recommend_model.R` | Function for generating forecasting model recommendations |
-| `example.R` | Reproducible examples using simulated seasonal and nonseasonal series |
+| `Example.R` | Reproducible examples using simulated seasonal and nonseasonal series |
 | `tree_seasonal.rds` | Fitted classification tree for seasonal series |
 | `tree_nonseasonal.rds` | Fitted classification tree for nonseasonal series |
 
@@ -40,7 +40,7 @@ Download or clone this repository and set the R working directory to the folder 
 To run the complete demonstration:
 
 ```r
-source("example.R")
+source("Example.R")
 ```
 
 Alternatively, load the functions and apply them to your own time series:
@@ -58,7 +58,7 @@ Here, `my_series` is a numeric time series, `h` is the forecasting horizon, and 
 
 ## Example Results
 
-Using the simulated series provided in `example.R`, the fitted trees produced the following recommendations:
+Using the simulated series provided in `Example.R`, the fitted trees produced the following recommendations:
 
 | Simulated series | Recommended model |
 |---|---|
@@ -67,7 +67,7 @@ Using the simulated series provided in `example.R`, the fitted trees produced th
 
 These recommendations illustrate the operation of the software and do not establish that the recommended models are necessarily the most accurate for the simulated series.
 
-## Methodological Note
+## Note
 
 The decision trees are intended to provide interpretable, feature-based forecasting model recommendations. Class weighting was applied during tree fitting to improve representation of the four candidate models.
 
