@@ -1,13 +1,4 @@
 # Feature extraction for the forecasting-model decision trees
-# Based on the original monthly-series feature definitions.
-# Required packages: tsfeatures, forecast, plus the package(s) that provided
-# the original unqualified skewness(), kurtosis(), and nonlinearity().
-# Additional original project functions required for three features:
-#   tsfeatures::outlierinclude_mdrmd, tsfeatures::walker_propcross,
-#   tsfeatures::localsimple_taures
-# These functions are not part of standard tsfeatures releases; install/source
-# the original implementations before using this script if needed.
-
 # -------------------------------------------------------
 # Required packages
 # -------------------------------------------------------
