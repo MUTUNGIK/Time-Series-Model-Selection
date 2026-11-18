@@ -1,9 +1,11 @@
-# Feature extraction for the forecasting-model decision trees
+
+
 # -------------------------------------------------------
 # Required packages
 # -------------------------------------------------------
 
 library(fpp3)
+
 library(tidyverse)
 library(tidyr)
 library(forecast)
@@ -108,13 +110,10 @@ feature_ets_parameter <- function(x, parameter) {
   as.numeric(fit$par[[parameter]])
 }
 
-
+# Extract all predictors retained after the original exclusion list.
 # h is the requested forecast horizon; series_length/Horizon = length_horizon.
 extract_features <- function(x, h = 12) {
-  stopifnot(is.numeric(x), length(h) == 1, is.finite(h), h > 0)
-  x <- scale_ts(as.numeric(x))
-  if (length(x) < 24) stop("At least 24 non-missing observations are required for monthly STL features.")
-
+  
 
   monthly <- stats::ts(x, frequency = 12)
   data.frame(
