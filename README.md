@@ -49,9 +49,13 @@ Alternatively, load the functions and apply them to your own time series:
 source("feature_extraction.R")
 source("recommend_model.R")
 
-features <- extract_features(my_series, h = 12)
+# Extract features for seasonal and non-seasonal series
+seasonal_features <- extract_features(seasonal_ts, h = 12, freq = 12)
+nonseasonal_features <- extract_features(nonseasonal_ts, h = 12, freq = 1)
 
-recommend_model(features, seasonal = TRUE)
+# Recommend forecasting models
+recommend_model(seasonal_features, seasonal = TRUE)
+recommend_model(nonseasonal_features, seasonal = FALSE)
 ```
 
 Here, `my_series` is a numeric time series, `h` is the forecasting horizon, and `seasonal` specifies whether the seasonal or nonseasonal decision tree should be used.
