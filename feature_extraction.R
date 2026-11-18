@@ -108,22 +108,13 @@ feature_ets_parameter <- function(x, parameter) {
   as.numeric(fit$par[[parameter]])
 }
 
-# Extract all predictors retained after the original exclusion list.
+
 # h is the requested forecast horizon; series_length/Horizon = length_horizon.
 extract_features <- function(x, h = 12) {
   stopifnot(is.numeric(x), length(h) == 1, is.finite(h), h > 0)
   x <- scale_ts(as.numeric(x))
   if (length(x) < 24) stop("At least 24 non-missing observations are required for monthly STL features.")
 
-  # Three custom feature functions used in the original analysis were not
-  # defined in the supplied code. Supply their original implementations.
-  custom <- c("outlierinclude_mdrmd", "walker_propcross", "localsimple_taures")
-  missing <- custom[!vapply(custom, function(nm) exists(nm, envir = asNamespace("tsfeatures"),
-                                                       inherits = FALSE), logical(1))]
-  if (length(missing)) stop(
-    "Missing original custom tsfeatures functions: ", paste(missing, collapse = ", "),
-    ". Source/install the original definitions to reproduce these predictors."
-  )
 
   monthly <- stats::ts(x, frequency = 12)
   data.frame(
