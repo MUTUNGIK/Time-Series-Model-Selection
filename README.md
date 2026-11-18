@@ -1,15 +1,13 @@
 # Feature-Based Forecasting Model Recommendation
 
-This repository provides an R implementation of a decision-tree-based approach for recommending forecasting models using time series characteristics.
+This repository provides an R implementation of a decision-tree-based approach that recommends forecasting models based on time-series characteristics. The trees were developed using forecasting performance and time series features extracted from series in the M4 competition dataset. The dataset is divided into seasonal and nonseasonal datasets; thus, two separate classification trees are developed.
 
-The software recommends one of four forecasting models:
+The implementation recommends one of four forecasting models:
 
 - ARIMA
 - Chronos
 - LSTM
 - N-BEATS
-
-Separate classification trees are provided for seasonal and nonseasonal time series. The trees were developed using forecasting performance and time series features from the M4 competition dataset.
 
 ## Repository Contents
 
